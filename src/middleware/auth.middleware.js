@@ -13,8 +13,6 @@ const protectRoute = async (req, res, next) => {
 
     //verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("Decoded Token:", decoded);
-
     //find the user
     const user = await User.findById(decoded.userId).select("-password");
 
