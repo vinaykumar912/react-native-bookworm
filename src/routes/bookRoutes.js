@@ -56,8 +56,12 @@ router.get("/", protectRoute, async (req, res) => {
 
     res.send({
       books,
+
+      // Not using
       currentPage: page,
       totalBooks,
+      // Not using
+
       totalPages: Math.ceil(totalBooks / limit),
     });
   } catch (error) {
